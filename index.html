@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Foodie - Order Your Favorite Meals</title>
+    <link rel="icon" href="img/Burger.jpg">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="#home">🍔 Foodie</a></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleBasket()">🛒 <span id="basket-count">0</span> in Basket</a></li>
+            </ul>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+    <section id="home">
+        <div class="part1">
+            <h1>Welcome to</h1>
+            <strong>Foodie</strong>
+        </div>
+        <div class="part2">
+            <img class="section-img" src="img/home.png" alt="Delicious food display">
+        </div>
+    </section>
+    <section id="menu">
+        <h2>Menu</h2>
+        <div class="menu-container">
+            <button class="left-btn">◀</button>
+            <div class="menu-wrapper">
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="img/Burger.jpg" alt="Burger">
+                        <h3>Cheeseburger</h3>
+                        <h4>35 DH</h4>
+                        <button onclick="addToBasket({'Cheeseburger': 35})">Order</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Pizza.jpg" alt="Pizza">
+                        <h3>Pizza</h3>
+                        <h4>40 DH</h4>
+                        <button onclick="addToBasket({'Pizza': 40})">Order</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Pasta.jpg" alt="Pasta">
+                        <h3>Spaghetti</h3>
+                        <h4>60 DH</h4>
+                        <button onclick="addToBasket({'Spaghetti': 60})">Order</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Shawarma.jpg" alt="Shawarma">
+                        <h3>Shawarma</h3>
+                        <h4>35 DH</h4>
+                        <button onclick="addToBasket({'Shawarma': 35})">Order</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Lasagne.jpg" alt="Lasagne">
+                        <h3>Lasagne</h3>
+                        <h4>55 DH</h4>
+                        <button onclick="addToBasket({'Lasagne': 55})">Order</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Tacos.jpg" alt="Tacos">
+                        <h3>Tacos</h3>
+                        <h4>40 DH</h4>
+                        <button onclick="addToBasket({'Tacos': 40})">Order</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Monada.png" alt="Soft drinks">
+                        <h3>Soft drinks</h3>
+                        <h4>15 DH</h4>
+                        <button onclick="addToBasket({'Soft drinks': 15})">Order</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Water.jpg" alt="Water">
+                        <h3>Water 1.5L</h3>
+                        <h4>10 DH</h4>
+                        <button onclick="addToBasket({'Water 1.5L': 10})">Order</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="img/Juice.jpg" alt="Juice">
+                        <h3>Juice</h3>
+                        <h4>18 DH</h4>
+                        <button onclick="addToBasket({'Juice': 18})">Order</button>
+                    </div>
+                </div>
+            </div>  
+            <button class="right-btn">▶</button>
+    </section>
+    <section id="contact">
+    <h2>Contact</h2>
+
+    <div class="contact-container">
+        <div class="info">
+            <i class='bx bxs-phone'></i>
+            <p>+123 456 789</p>
+        </div>
+        <div class="info">
+            <i class='bx bxs-envelope'></i>
+            <p>contact@email.com</p>
+        </div>
+        <div class="info">
+            <i class='bx bxs-map'></i>
+            <p>123 Rue, Ville</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="social-container">
+        <div class="social">
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+    </div>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2739.1785796517015!2d-5.801039384907162!3d35.75946298020273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1a8a18456c580f%3A0x64706f7fef4bc89d!2sTanger!5e0!3m2!1sfr!2sma!4v1685484377673!5m2!1sfr!2sma" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="">
+        </iframe>
+    </div>
+</section>
+
+<footer>&copy; Foodie 2025.</footer>
+
+    <div id="basket-box">
+        <span class="close-btn" onclick="toggleBasket()">X</span>
+        <h3>Your Orders</h3>
+        <ul id="basket-items">
+        </ul>
+        <center><h3>Total : <span id="basket-total">0</span> DH</h3></center>
+        <div class="basket-btn"><button onclick="clearBasket()">Clear Basket</button>
+                <button><a href="OrderForm.html" style="color: white; text-decoration: none;">Valid</a></button></div>
+    </div>
+</body>
+</html>
